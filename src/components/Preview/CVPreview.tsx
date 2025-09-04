@@ -1,19 +1,17 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import ExperienceSection from './ExperienceSection';
+import PersonalHeader from './PersonalHeader';
+import SkillsSection from './SkillsSection';
 
-function CVPreview(){
-    return (
-    <Card>
-      <Card.Header as="h5">Featured</Card.Header>
-      <Card.Body>
-        <Card.Title>Special title treatment</Card.Title>
-        <Card.Text>
-          With supporting text below as a natural lead-in to additional content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
+const CVPreview = ({ cvData }) => {
+  if (!cvData) return null;
+
+  return (
+    <div className="border border-gray-300 p-6 rounded-lg">
+      <PersonalHeader {...cvData} />
+      <ExperienceSection experiences={cvData.experience} />
+      <SkillsSection skills={cvData.skills} />
+    </div>
   );
-}
+};
 
 export default CVPreview;

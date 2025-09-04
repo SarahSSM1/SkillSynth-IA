@@ -8,7 +8,7 @@ function Experience(){
               Adicione suas experiências de trabalho mais relevantes
             </Card.Text>
         </>
-    )  
+    )
 }
 
 export default Experience;

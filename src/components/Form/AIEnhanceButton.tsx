@@ -4,7 +4,7 @@ function AIEnhanceButton(){
     return (
         <>
           <Button variant="outline-info">Info</Button>
-        </> 
+        </>
     );
 }
 

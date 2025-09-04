@@ -10,7 +10,7 @@ function Skills(){
             </Card.Text>
         </>
     )
-    
+
 }
 
 export default Skills;
