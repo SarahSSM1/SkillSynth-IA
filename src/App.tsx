@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './App.css';
+
 import PersonalInfo from './components/Form/PersonalInfo';
 import CVPreview from './components/Preview/CVPreview';
 
@@ -15,12 +16,14 @@ function App() {
     phone: '(00) 00000-0000',
     linkedin: 'linkedin.com/in/seuperfil',
     summary: 'Clique em "Gerar Resumo AI" para criar um resumo profissional.',
-    experience: [{
-      jobTitle: 'Seu Cargo',
-      company: 'Sua Empresa',
-      duration: 'Período',
-      description: 'Responsabilidades e conquistas.'
-    }],
+    experience: [
+      {
+        jobTitle: 'Seu Cargo',
+        company: 'Sua Empresa',
+        duration: 'Período',
+        description: 'Responsabilidades e conquistas.'
+      }
+    ],
     skills: ['React', 'JavaScript', 'HTML', 'CSS']
   });
 
@@ -34,7 +37,11 @@ function App() {
           <Navbar.Collapse id="navbarScroll">
             <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll></Nav>
             <Form className="d-flex">
-              <Form.Control type="search" placeholder="Cole sua API Key" className="me-2" />
+              <Form.Control
+                type="search"
+                placeholder="Cole sua API Key"
+                className="me-2"
+              />
               <Button variant="outline-success">Exportar PDF</Button>
             </Form>
           </Navbar.Collapse>
@@ -46,16 +53,16 @@ function App() {
 
       {/* Container 50/50 */}
       <div className="flex flex-col lg:flex-row gap-6 p-4 max-w-7xl mx-auto">
-        {/* Formulário (esquerda) */}
+        {/* Lado esquerdo - Formulário */}
         <div className="w-full lg:w-1/2">
-          <div className="bg-white p-6 rounded-lg shadow-md h-full">
+          <div className="bg-white p-6 rounded-lg shadow-md h-full overflow-auto">
             <PersonalInfo cvData={cvData} setCvData={setCvData} />
           </div>
         </div>
 
-        {/* Preview (direita) */}
+        {/* Lado direito - Preview */}
         <div className="w-full lg:w-1/2">
-          <div className="bg-white p-6 rounded-lg shadow-md h-full">
+          <div className="bg-white p-6 rounded-lg shadow-md h-full overflow-auto">
             <CVPreview cvData={cvData} />
           </div>
         </div>
